@@ -1,0 +1,38 @@
+Feature: Testar o Cadastro
+
+
+CT01 -Dados que respeitam os requisitos mínimos
+Dado que estou na tela de Cadastro
+E eu preencho os requisitos mínimos para o Cadastro
+Quando eu clicar no botão Cadastrar
+Então virá uma mensagem de sucesso
+E o cadastro será realizada com sucesso
+
+CT02 -Dados que não respeitam os requisitos mínimo (Campo obrigatório vazio)
+Dado que estou na tela de Cadastro
+E eu não preencho os requisitos mínimos para o Cadastro
+Quando eu clicar no botão Cadastrar
+Então o botão estará bloqueado
+
+CT03 -Dados já cadastrados
+Dado que estou na tela de Cadastro
+E eu preencho os requisitos mínimos para o Cadastro
+E o e-mail informado já está cadastrado no banco
+Quando eu clicar no botão Cadastrar
+Então virá a informação de dado já cadastrado
+E o cadastro não será realizado com sucesso
+
+CT04 - Dados de desacordo com o campo
+Dado que eu esteja na tela de Cadastro
+E eu preencher os campos com o tipo errado
+E com dados incompletos
+Quando eu clicar no botão Cadastrar
+Então virá a informação de dados inválidos
+E o cadastro não será realizado com sucesso
+
+CT05 - Validação de login com o cadastro novo
+Dado que realizei o cadastro de um novo usuário
+E estou na tela de login
+Quando eu inserir as informações necessárias
+E clicar no botão Entrar
+Então o Login será realizado com sucesso

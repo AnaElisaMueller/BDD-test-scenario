@@ -1,0 +1,39 @@
+Feature: Testar o Login
+
+
+CT01 - E-mail e Senha corretos
+Dado que estou na tela de Login
+E insiro um e-mail já cadastrado
+E insiro a senha correta
+Quando eu clicar no botão Entrar
+Então o login será realizado com sucesso
+
+CT02 - E-mail válido e Senha incorreta
+Dado que estou na tela de Login
+E insiro um e-mail já cadastrado
+E insiro uma senha incorreta
+Quando eu clicar no botão Entrar
+Então o login não será realizado com sucesso 
+E aparecerá uma mensagem de “Usuário ou senha incorreta”
+
+CT03 - E-mail inválido
+Dado que estou na tela de Login
+E insiro um texto que não é um e-mail
+E insiro a senha correta
+Quando eu clicar no botão Entrar
+Então o botão estará bloqueado
+
+CT04 - E-mail não cadastrado
+Dado que estou na tela de Login
+E insiro um e-mail não cadastrado
+E insiro uma senha
+Quando eu clicar no botão Entrar
+Então o login não será realizado com sucesso 
+E aparecerá uma mensagem informando o problema
+
+CT05 - Campo vazio
+Dado que estou na tela de Login
+E deixo um dos campo vazios
+E um que cumpra a requisito mínimo do campo
+Quando eu clicar no botão Entrar
+Então o botão estará bloqueado

@@ -1,0 +1,36 @@
+Feature: Testar a Redefinição de Senha
+
+
+CT01 - Senha que compreendem os requisitos mínimos
+Dado que estou na Redefinição de Senha
+E sigo as orientações de requisitos para a senha
+Quando eu clicar no botão Confirmar nova senha
+Então a troca de senha será realizada com sucesso
+
+CT02 - Senha que não comprem os requisitos mínimos (Geral)
+Dado que estou na Redefinição de Senha
+E não sigo as orientações de requisitos para a senha
+Quando eu clicar no botão Confirmar nova senha
+Então o botão estará bloqueado
+
+CT03 - Campos vazios
+Dado que estou na Redefinição de Senha
+E deixo algum dos campos obrigatórios vazios
+Quando eu clicar no botão Confirmar nova senha
+Então o botão estará bloqueado
+
+CT04 - Validação de login com a senha nova
+Dado que realizei a redefinição de senha com sucesso
+E estou na tela de login
+Quando eu inserir as informações necessárias
+E inserir a senha nova
+E clicar no botão Entrar
+Então o Login será realizado com sucesso
+
+CT05 - Validação de login com a senha antiga
+Dado que realizei a redefinição de senha com sucesso
+E estou na tela de login
+Quando eu inserir as informações necessárias
+E inserir a senha antiga
+E clicar no botão Entrar
+Então o Login não será realizado com sucesso
